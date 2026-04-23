@@ -1,64 +1,105 @@
 *{
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
-  background: linear-gradient(to right, #ec26ce, #2bbcf1);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-    height: 100vh; 
+  background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffcc);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+  transition: 0.5s;
 }
 
-h1{
-  text-align: center;
+/* Animated gradient */
+@keyframes gradientMove {
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
 }
 
+/* DARK MODE */
+body.dark{
+  background: #0f0f1a;
+}
+
+/* Glass + Neon Form */
 form{
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 320px;
   text-align: center;
-  max-width: 100%;
-  
+  color: white;
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #ff00ff;
 }
 
-input{
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-  width: 40%;
-   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+/* Heading */
+h1{
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00f7ff;
 }
 
+/* Labels */
 label{
-  font-size: 20px;
-  margin-right: 5px;
-  text-align: center;
-  font-weight: 700;
-
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
 }
 
-button{
-  padding: 10px 30px;
-  position: relative;
+/* Inputs */
+input{
+  width: 100%;
+  padding: 12px;
   border-radius: 10px;
-  margin-top: 20px;
   border: none;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-  background-color: rgb(244, 93, 239);
+  outline: none;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.1);
   color: white;
 }
 
-button:hover{
-  background-color: #d63bd1;
-  transition: 0.3s;
-  cursor: pointer;
+/* Neon glow focus */
+input:focus{
+  box-shadow: 0 0 10px #00f7ff;
 }
 
-h2{
-  text-align: center;
+/* Button */
+button{
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #00f7ff, #ff00ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+/* Button hover */
+button:hover{
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #ff00ff;
+}
+
+/* Toggle button */
+.toggle-btn{
+  position: absolute;
+  top: 20px;
+  width: 100px;
+  right: 20px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: black;
+  color: white;
 }
